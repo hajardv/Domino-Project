@@ -1,2 +1,2 @@
 # Domino-Project
-<h1 color="red">the best game that i made</h1>
+<h1>the best game that i made</h1>
