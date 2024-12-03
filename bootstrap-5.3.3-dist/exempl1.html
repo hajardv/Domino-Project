@@ -1,0 +1,15 @@
+<input type="text" id="tache" placeholder="Entrez une tâche">
+<button onclick="ajouterTache()">Ajouter</button>
+<ul id="listeTaches"></ul>
+
+<script>
+    function ajouterTache() {
+        let tache = document.getElementById("tache").value;
+        if (tache.trim() !== "") {
+            let li = document.createElement("li");
+            li.textContent = tache;
+            document.getElementById("listeTaches").appendChild(li);
+            document.getElementById("tache").value = "";
+        }
+    }
+</script>

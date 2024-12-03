@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="" id="inf">
+    <label for="">First Name</label><br>
+    <input type="text"  name="nm" placeholder="entrer" ><br
+    <label for="">last Name</label><br>
+    <input type="text"   name="pre" placeholder="entrer" ><br>
+    <label for="">tel</label><br>
+    
+    <input type="text"  name="tel" placeholder="enter">
+    <button type="button" onclick="val()">sumbite</button>
+<h1 name="h11"></h1>
+
+</form>
+
+
+    <script>
+      function val(){
+       var srcc = document.forms["inf"];
+       let h12 =document.getElementsByName("h11")[0]
+      h12.innerHTML =`my name is ${srcc["nm"].value}${" "}${srcc["pre"].value} and my number is ${" "}${srcc["tel"].value}`
+      
+       h12.style.color= "red"
+      
+    }
+
+
+    </script>
+</body>
+</html>
