@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+    <link  href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body  >
+    <div id="message"></div>        
+
+    <div class="container">
+      <h1>Refresh Me</h1>
+
+      <div class="dice">
+        <p class="p1">Player 1</p>
+       
+      </div>
+
+      <div class="dice">
+        <p class="p2">Player 2</p>
+       
+      </div>
+    </div>
+
+
+    <h1 class="idd">Images aléatoires</h1>
+    <div id="image-container">
+        <img id="image1" src="domino1.jpeg" alt="Image 1">
+        <img id="image2" src="domino3.jpeg" alt="Image 2">
+
+    </div>
+    <footer>www 🎲 App Brewery 🎲 com</footer>
+
+
+    <script>
+      
+        const images = [
+      {src:"./domino1.jpeg",point:1 } ,
+      {src:"./domino2.jpeg",point:6 }, 
+      {src:"./domino3.jpeg",point:4 },
+      ];
+
+        function mathe() {
+            const randomIndex = Math.floor((Math.random() * images.length)); //2
+            return images[randomIndex]; //images[2] => {src:"./domino3.jpeg",point:4 }
+        }
+        function affichee() {
+            let img1 = mathe(); //{src:"./domino3.jpeg",point:4 }
+            let img2 = mathe(); //{src:"./domino3.jpeg",point:4 }
+
+  /*          
+           while (img1.src === img2.src) {
+              //img2 = {src:"./domino3.jpeg",point:4 }
+              //img2.scr = "./domino3.jpeg"
+                img2 = mathe(); // {src:"./domino3.jpeg",point:4 }
+              //img2.scr = ./domino3.jpeg
+              //img2 = {src:"./domino3.jpeg",point:4 }
+             
+            }
+            
+*/
+          
+            document.getElementById("image1").src = img1.src;
+            document.getElementById("image2").src = img2.src;
+           const point =document.getElementById("message")
+           if(img1.point>img2.point){
+            point.innerText="🎇 the player 1 is win"
+           }
+           else if(img1.point<img2.point){
+             point.innerText="the player 2 is win 🎇"
+           }
+           else{
+            point.innerHTML="equil"
+           }
+           
+           
+
+        }
+       
+          
+
+        
+
+        
+        affichee();
+        </script>
+  </body>
+</html>
